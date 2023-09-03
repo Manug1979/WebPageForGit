@@ -31,134 +31,139 @@
 
 		
 
+		
+
+		<!-- Mes commandes GIT -->
+		<div>
+			<h1>Mes commandes GIT</h1>
+			   <p class="item">Git config --global user.name</p>
+				<p class="item">Git config --global user.email</p>
+				<p class="item">Git config --global --list</p>
+				<p class="item">git = git --help</p>
+				<p class="item">Git version</p>
+				<p class="item">Pwd -> Path courant</p>
+				<p class="item">Git init  => pour créer un dépot local -> génère dossier .git qu'il ne faut pas effacer car contient l'historique des modifications</p>
+				<p class="item">ls -la    => pour vérifier que le dépot a été créé</p>
+				<p class="item">Pour ajouter fichier à la zone d'index (Stage) => Git add index.html</p>
+				<p class="item">Pour enlever fichier de la zone d'index (Unstage) => Git reset index.html</p>
+				<p class="item">Git add . => permet d'ajouter tous les fichiers 'untracked' vers la zone d'index</p>
+				<p class="item">Pour ajouter au dépot local => Git commit -m "NomDuBugOuDeLaFeature"</p>
+				<p class="item">Git diff => voir les modifications </p>
+				<p class="item">Git diff --cached => voir les modifications présentes dans la zone d'index</p>
+				<p class="item">Git log => historique des commit</p>
+				<p class="item">git log -n2</p>
+				
+				
+				<p class="item">Git show SHA-1 (à copier coller)<br />
+					Git show TagName ( ex : git show master)<br />
+	
+					git clone<br />
+					git remote -v => affiche la liste des remote<br />
+	
+	
+	
+					Envoyer nos modifications local vers le serveur distant<br />
+	
+					git remote add origin https://github.com/Manug1979/WebPageForGit.git => pour faire lien entre dépot local et repo distant Github<br />
+					git push -u  origin master => Pousser dépot local vers depot distant<br />
+					git push --tags<br />
+	
+					Récupèrer les modifications serveur pour les ramener localement<br />
+					Git pull <br />
+					Git fetch<br />
+	
+					Différents types de gestion : centralisée / Intégration / Dictateur<br />
+	
+					git blame<br />
+					git blame -L 10,20 nomFichier<br />
+	
+					Filtrer avec GitIgnore<br />
+	
+					Git stash save "Message"<br />
+					git stash pop index<br />
+					git stash list<br />
+					git stash show index<br />
+	
+					Problème de merge : parfois quand on a un fichier local et qu'on fait un pull qui rapatrie le même fichier modifier en conflit avec notrze modification , il faut faire soit un commit de changment , soit un stash ,pull
+	
+					git merge --abort<br />
+	
+					git pull --rebase<br />
+	
+					Quand merge de commits => 2 solutions<br />
+					- merge <br />
+					- git pull --rebase<br />
+	
+	
+					git push --set-upstream origin NomDeLaBranch </p>
+
+				
+
+				<p class="item">
+					Création de branche<br />
+					--------------------<br />
+					git branch NomDeLaBranche<br />
+					git checkout NomDeLaBranche<br />
+					git add .<br />
+					git commit -m""<br />
+					git push    OU      git push --set-upstream origin NomDeLaBranch  pour créer lien entre branche local et branche distante<br />
+				</p>
+				<p class="item">
+					
+					Récupérer une branche d'un dépot distant<br />
+					-----------------------------------------<br />
+					git branch<br />
+					git branch -a<br />
+					git checkout NomBranche<br />
+				</p>
+				
+				<p class="item">
+					Copier un changement d'une branche vers master (cherry pick) => BugFix urgent à appliquer sur master<br />
+					----------------------------------------------------------------<br />
+					git checkout master<br />
+					git log / git lock NomBranche pour voir les SHA1 de commit<br />
+					git cherry-pick SHA1 du commit<br />
+					git push<br />
+				</p>
+				
+				<p class="item">
+					Merge entre deux branches<br />
+					--------------------------<br />
+					On se positionne d'abord sur la branche sur laquelle on veut faire le merge => ex : git checkout/switch master<br />
+					git merge NomDeLaBrancheAMergerVersMaster<br />
+					git add .<br />
+					git commit -m"Merge de ma branche X"<br />
+					git push<br />
+				</p>
+
+				<p class="item">
+					Rebase entre deux branches<br />
+					----------------------------<br />
+					On se positionne sur la branche que l'on veut ramener vers l'autre ou sur un commit<br />
+					git checkout -b NomDeBrancheARamener<br />
+					git add .<br />
+					git commit<br />
+					git rebase master<br />
+					Si conflit , gérer conflit => git add . => git rebase --continue<br />
+					git checkout master<br />
+					git merge NomDeBrancheARamener<br />
+				</p>
+
+				<p class="item">
+					<u>Supprimer une branche</u><br />
+					git branch BRANCH_A_SUP<br />
+					git checkout BRANCH_A_SUP<br />
+					git push --set-upstream origin BRANCH_A_SUP<br />
+
+				</p>
+
+		
+		</div>	
+
 		<!-- récompense -->
 		<div>
 			<h1>Mon gist</h1>
 			<p><script src="https://gist.github.com/Manug1979/f1acc448274d3097f6fdf21de2265f63.js"></script>
 			</p>
 		</div>
-
-		<!-- Mes commandes GIT -->
-		<div>
-			<h1>Mes commandes GIT</h1>
-			   <p>
-				
-				Git config --global user.name
-				Git config --global user.email
-				Git config --global --list
-				git = git --help
-
-				Git version
-				Pwd -> Path courant
-
-				Dossier de travail  --  Zone d'index -- Depot local
-
-				Git init  => pour créer un dépot local -> génère dossier .git qu'il ne faut pas effacer car contient l'historique des modifications
-				ls -la    => pour vérifier que le dépot a été créé
-
-				Pour ajouter fichier à la zone d'index (Stage) => Git add index.html
-				Pour enlever fichier de la zone d'index (Unstage) => Git reset index.html
-				Git add . => permet d'ajouter tous les fichiers 'untracked' vers la zone d'index
-
-				Pour ajouter au dépot local => Git commit -m "NomDuBugOuDeLaFeature"
-				Git diff => voir les modifications 
-				Git diff --cached => voir les modifications présentes dans la zone d'index
-
-				Git log => historique des commit
-				Git log -n2
-
-				Git show SHA-1 (à copier coller)
-				Git show TagName ( ex : git show master)
-
-				git clone
-				git remote -v => affiche la liste des remote
-
-
-
-				Envoyer nos modifications local vers le serveur distant
-
-				git remote add origin https://github.com/Manug1979/WebPageForGit.git => pour faire lien entre dépot local et repo distant Github
-				git push -u  origin master => Pousser dépot local vers depot distant
-				git push --tags
-
-				Récupèrer les modifications serveur pour les ramener localement
-				Git pull 
-				Git fetch
-
-				Différents types de gestion : centralisée / Intégration / Dictateur
-
-				git blame
-				git blame -L 10,20 nomFichier
-
-				Filtrer avec GitIgnore
-
-				Git stash save "Message"
-				git stash pop index
-				git stash list
-				git stash show index
-
-				Problème de merge : parfois quand on a un fichier local et qu'on fait un pull qui rapatrie le même fichier modifier en conflit avec notrze modification , il faut faire soit un commit de changment , soit un stash ,pull
-
-				git merge --abort
-
-				git pull --rebase
-
-				Quand merge de commits => 2 solutions
-				- merge 
-				- git pull --rebase
-
-
-				git push --set-upstream origin NomDeLaBranch 
-
-
-				Création de branche
-				--------------------
-				git branch NomDeLaBranche
-				git checkout NomDeLaBranche
-				git add .
-				git commit -m""
-				git push    OU      git push --set-upstream origin NomDeLaBranch  pour créer lien entre branche local et branche distante
-
-				Récupérer une branche d'un dépot distant
-				-----------------------------------------
-				git branch
-				git branch -a
-				git checkout NomBranche
-
-
-				Copier un changement d'une branche vers master (cherry pick) => BugFix urgent à appliquer sur master
-				----------------------------------------------------------------
-				git checkout master
-				git log / git lock NomBranche pour voir les SHA1 de commit
-				git cherry-pick SHA1 du commit
-				git push
-
-				Merge entre deux branches
-				--------------------------
-				On se positionne d'abord sur la branche sur laquelle on veut faire le merge => ex : git checkout/switch master
-				git merge NomDeLaBrancheAMergerVersMaster
-				git add .
-				git commit -m"Merge de ma branche X"
-				git push
-
-				Rebase entre deux branches
-				----------------------------
-				On se positionne sur la branche que l'on veut ramener vers l'autre ou sur un commit
-				git checkout -b NomDeBrancheARamener
-				git add .
-				git commit
-				git rebase master
-				Si conflit , gérer conflit => git add . => git rebase --continue
-				git checkout master
-				git merge NomDeBrancheARamener
-
-				Supprimer une branche
-				------------------------
-				git branch BRANCH_A_SUP
-				git checkout BRANCH_A_SUP
-				git push --set-upstream origin BRANCH_A_SUP
-				</p>
-		</div>
-
-		
 </body></html>
