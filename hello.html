@@ -20,13 +20,13 @@
 		<!-- description -->
 		<div>
 			<h1>Ma description</h1>
-			<p>Bonjour , je m'appelle Goblet Manu et suis passionné par l'ingéniérie informatique aussi large soit elle. Voici un petit récapitulatif des différentes commandes GIT nécessaires à l'historisation de mes codes source...</p>
+			<p>Bonjour , je m'appelle Goblet Manu et suis passionné par l'ingéniérie informatique aussi large soit elle. Voici un petit récapitulatif des différentes commandes GIT nécessaires à l'historisation de mes codes source...</div>
 		</div>
 
 		<!-- récompense -->
 		<div>
 			<h1>Mes récompenses</h1>
-			<p><img src="images\medal_bronze.png"><img src="images\medal_silver.png"><img src="images\medal_gold.png"></p>
+			<p><img src="images\medal_bronze.png"><img src="images\medal_silver.png"><img src="images\medal_gold.png"></div>
 		</div>
 
 		
@@ -38,125 +38,146 @@
 			<h1>Mes commandes GIT</h1>
 
 
-				<p class="item">
+				<div class="item">
 					<u>Création de branche</u>
-					git branch NomDeLaBranche
-					git checkout NomDeLaBranche
-					git add .
-					git commit -m
-					git push  OU  git push --set-upstream origin NomDeLaBranch  pour créer lien entre branche local et branche distante
-				</p>
+					<ul>
+						<li>git branch NomDeLaBranche
+						</li>
+						<li>git checkout NomDeLaBranche
+						</li>
+						<li>git add .
+						</li>
+						<li>git commit -m
+						</li>
+						<li>	git push  OU  git push --set-upstream origin NomDeLaBranch  pour créer lien entre branche local et branche distante
+						</li>
+					</ul>
+				</div>
 
-				<p class="item">	
+				<div class="item">	
 					<u>Récupérer une branche d'un dépot distant</u>
-					git branch
-					git branch -a
-					git checkout NomBranche
-				</p>
+					<ul>
+						<li>git branch</li>
+						<li>git branch -a</li>
+						<li>git checkout NomBranche</li>
+					</ul>
+
+				</div>
 				
-				<p class="item">
-					<u>Copier un changement d'une branche vers master (cherry pick) => BugFix urgent à appliquer sur master</u>
-					
-					git checkout master
-					git log / git lock NomBranche pour voir les SHA1 de commit
-					git cherry-pick SHA1 du commit
-					git push
-				</p>
+				<div class="item">
+					<u>Copier un changement (commit) d'une branche vers master (cherry pick) => BugFix urgent à appliquer sur master</u>
+					<ul>
+						<li>git checkout master</li>
+						<li>git log / git lock NomBranche pour voir les SHA1 de commit</li>
+						<li>git cherry-pick SHA1 du commit</li>
+						<li>git push</li>
+					</ul>
+				</div>
 				
-				<p class="item">
+				<div class="item">
 					<u>Merge entre deux branches</u>
-					On se positionne d'abord sur la branche sur laquelle on veut faire le merge => ex : git checkout/switch master
-					git merge NomDeLaBrancheAMergerVersMaster
-					git add .
-					git commit -m"Merge de ma branche X"
-					git push
-				</p>
+					
+					<p>On se positionne d'abord sur la branche sur laquelle on veut faire le merge => ex : git checkout/switch master</p>
 
-				<p class="item">
+					<ul>
+						<li>git merge NomDeLaBrancheAMergerVersMaster</li>
+						<li>git add .</li>
+						<li>git commit -m"Merge de ma branche X"</li>
+						<li>git push</li>
+					</ul>
+				</div>
+
+				<div class="item">
 					<u>Rebase entre deux branches</u>
-					On se positionne sur la branche que l'on veut ramener vers l'autre ou sur un commit
-					git checkout -b NomDeBrancheARamener
-					git add .
-					git commit
-					git rebase master
-					Si conflit , gérer conflit => git add . => git rebase --continue
-					git checkout master
-					git merge NomDeBrancheARamener
-				</p>
 
-				<p class="item">
+					<p>On se positionne sur la branche que l'on veut ramener vers l'autre ou sur un commit</p>
+					<ul>
+						<li>git checkout -b NomDeBrancheARamener</li>
+						<li>git add .</li>
+						<li>git commit</li>
+						<li>git rebase master</li>
+						Si conflit , gérer conflit => git add . => git rebase --continue
+						<li>git checkout master</li>
+						<li>git merge NomDeBrancheARamener</li>
+					</ul>
+				</div>
+
+				<div class="item">
 					<u>Supprimer une branche</u>
-					git branch BRANCH_A_SUP
-					git checkout BRANCH_A_SUP
-					git push --set-upstream origin BRANCH_A_SUP
+					<ul>
+						<li>git branch BRANCH_A_SUP</li>
+						<li>git checkout BRANCH_A_SUP</li>
+						<li>git push --set-upstream origin BRANCH_A_SUP</li>
+					</ul>
+				</div>
 
-				</p>
+				<div class="item">
+					<u>Gérer conflit avec stash</u>
 
-				<p class="item">
-					Git config --global user.name
-					Git config --global user.email
-					Git config --global --list
-					git = git --help
-					Git version
-					Pwd -> Path courant
-					Git init  => pour créer un dépot local -> génère dossier .git qu'il ne faut pas effacer car contient l'historique des modifications
-					ls -la    => pour vérifier que le dépot a été créé
-					Pour ajouter fichier à la zone d'index (Stage) => Git add index.html
-					Pour enlever fichier de la zone d'index (Unstage) => Git reset index.html
-					>Git add . => permet d'ajouter tous les fichiers 'untracked' vers la zone d'index
-					Pour ajouter au dépot local => Git commit -m "NomDuBugOuDeLaFeature"
-					Git diff => voir les modifications 
-					Git diff --cached => voir les modifications présentes dans la zone d'index
-					Git log => historique des commit
-					git log -n2
-					Git show SHA-1 (à copier coller)
-					Git show TagName ( ex : git show master)
-					git clone
-					git remote -v => affiche la liste des remote
+					<p>Problème de merge : parfois quand on a un fichier local et qu'on fait un pull qui rapatrie le même fichier modifier en conflit avec notrze modification , il faut faire soit un commit de changment , soit un stash ,pull </p>
+					<ul>
+						<li>Git stash save "Message"</li>
+						<li>git stash pop index</li>
+						<li>git stash list</li>
+						<li>git stash show index</li>
+					</ul>
+				</div>
 
-					Envoyer nos modifications local vers le serveur distant
-	
-					git remote add origin https://github.com/Manug1979/WebPageForGit.git => pour faire lien entre dépot local et repo distant Github
-					git push -u  origin master => Pousser dépot local vers depot distant
-					git push --tags
-	
-					Récupèrer les modifications serveur pour les ramener localement
-					Git pull 
-					Git fetch
-	
-					Différents types de gestion : centralisée / Intégration / Dictateur
-	
-					git blame
-					git blame -L 10,20 nomFichier
-	
-					Filtrer avec GitIgnore
-	
-					Git stash save "Message"
-					git stash pop index
-					git stash list
-					git stash show index
-	
-					Problème de merge : parfois quand on a un fichier local et qu'on fait un pull qui rapatrie le même fichier modifier en conflit avec notrze modification , il faut faire soit un commit de changment , soit un stash ,pull
-	
-					git merge --abort
-	
-					git pull --rebase
-	
-					Quand merge de commits => 2 solutions
-					- merge 
-					- git pull --rebase
-	
-	
-					git push --set-upstream origin NomDeLaBranch 
-				</p>
+				<div class="item">
+					<u>Envoyer nos modifications local vers le serveur distant</u>
+					<ul>
+						<li>git add .</li>
+						<li>git commit -m""</li>
+						<li>git remote add origin https://github.com/Manug1979/WebPageForGit.git => pour faire lien entre dépot local et repo distant Github</li>
+						<li>git push -u  origin master => Pousser dépot local vers depot distant</li>
+						<li>git push --tags</li>
+					</ul>
+				</div>
 
-		
+				<div class="item">
+					<u>Récupèrer les modifications serveur pour les ramener localement
+					</u>
+					<ul>
+						<li>Git pull </li>
+						<li>Git fetch		</li>
+					</ul>		
+				</div>
+
+
+				<div class="item">
+					<u>Autres commandes utiles</u>
+					<ul>
+						<li>Git config --global user.name  => récupérer le nom d'utilisateur</li>
+						<li>Git config --global user.email => récupérer l'email'</li>
+						<li>Git config --global --list</li>
+						<li>git = git --help  => demande aide</li>
+						<li>Git version  => récupérer version</li>
+						<li>Pwd => Path courant</li>
+						<li>Git init  => pour créer un dépot local -> génère dossier .git qu'il ne faut pas effacer car contient l'historique des modifications</li>
+						<li>ls -la    => pour vérifier que le dépot a été créé</li>
+						<li>Git add index.html => ajouter fichier à la zone d'index</li>
+						<li>Git reset index.html => retirer fichier de la zone d'index</li>
+						<li>Git add . => permet d'ajouter tous les fichiers 'untracked' vers la zone d'index</li>
+						<li>Git commit -m "NomDuBugOuDeLaFeature" </li>
+						<li>Git diff => voir les modifications </li>
+						<li>Git diff --cached => voir les modifications présentes dans la zone d'index</li>
+						<li>Git log => historique des commit</li>
+						<li>Git show SHA-1 (à copier coller)</li>
+						<li>Git show TagName ( ex : git show master)</li>
+						<li>git clone url https ou lien ssh</li>
+						<li>git remote -v => affiche la liste des remote</li>
+						<li>git merge --abort</li>	
+						<li>git pull --rebase</li>	
+						<li>git push --set-upstream origin NomDeLaBranch </li>	
+									
+					</ul>
+				</div>
 		</div>	
 
 		<!-- récompense -->
 		<div>
 			<h1>Mon gist</h1>
 			<p><script src="https://gist.github.com/Manug1979/f1acc448274d3097f6fdf21de2265f63.js"></script>
-			</p>
+			</div>
 		</div>
 </body></html>

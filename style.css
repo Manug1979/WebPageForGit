@@ -1,3 +1,7 @@
+body,p,ul,u{
+  margin:20px;
+}
+
 #top-banner {
   color : rgb(255,255,255);
     font-size: 30px;
@@ -73,19 +77,32 @@
   font-size: 14px;
 }
 
-#content {
-  margin-left: 300px;
-  margin-top: 40px;
-}
 
 
-p.item{
+
+div.item{
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 12px;
     color: #039;
     background-color: #FCEBB6;
     white-space: pre-line;
+    margin: 20px;
 } 
+
+
+u{
+ 
+  font-size: 15px;
+  font-weight: bold;
+  padding-left:20px;
+}
+
+ul{
+}
+
+p{
+  padding-left:20px;
+}
 
 
 
